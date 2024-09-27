@@ -1,14 +1,6 @@
 
 
-let myImage = document.querySelector("img");
-myImage.onclick = function () {
-  let mySrc = myImage.getAttribute("src");
-  if (mySrc === "images/show.png") {
-    myImage.setAttribute("src", "images/show2.png");
-  } else {
-    myImage.setAttribute("src", "images/show.png");
-  }
-};
+let nameSpan = document.querySelector("#name");
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
 // 个性化欢迎信息设置函数
@@ -34,4 +26,14 @@ if (!localStorage.getItem('name')) {
   // 为按钮设置 onclick 事件处理器：
   myButton.onclick = function() {
     setUserName();
+  };
+  nameSpan.onclick = function () {
+    let storedName = localStorage.getItem('name') || '某人';
+    if (nameSpan.textContent === "唐馨凌") {
+      nameSpan.textContent = "王琛";
+      myHeading.textContent = "王琛x " + storedName; // 修改标题
+    } else {
+      nameSpan.textContent = "唐馨凌";
+      myHeading.textContent = "唐馨凌x " + storedName; // 修改标题
+    }
   };
