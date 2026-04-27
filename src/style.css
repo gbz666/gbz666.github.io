@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+
+:root {
+  --bg-canvas: #090f19;
+  --bg-surface: rgba(8, 16, 28, 0.86);
+  --surface-raised: rgba(10, 20, 35, 0.85);
+  --line-subtle: rgba(132, 156, 190, 0.25);
+  --line-strong: rgba(152, 175, 210, 0.45);
+
+  --text-primary: #e8f0ff;
+  --text-secondary: #c6d3ea;
+  --text-muted: #93a5c4;
+  --brand-blue: #6cb5ff;
+
+  --font-body: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-display: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+
+  --shadow-soft: 0 20px 48px rgba(5, 9, 16, 0.48);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at 8% -14%, rgba(110, 183, 255, 0.3), transparent 44%),
+    radial-gradient(circle at 96% -2%, rgba(64, 119, 207, 0.22), transparent 38%),
+    linear-gradient(165deg, #0f1f38 0%, #0b1628 45%, #080f19 100%),
+    var(--bg-canvas);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.38;
+  background-image:
+    repeating-linear-gradient(
+      120deg,
+      rgba(137, 187, 255, 0.06) 0px,
+      rgba(137, 187, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 13px
+    );
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.2rem 0 3.4rem;
+}
+
+@media (max-width: 860px) {
+  .page-shell {
+    padding: 1.4rem 0 2.4rem;
+  }
+}
