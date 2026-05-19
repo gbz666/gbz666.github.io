@@ -1,10 +1,11 @@
 import { marked } from 'marked'
 import type { BlogPost } from '../types/blog'
 import proxy502Markdown from '../content/blog/proxy-502.md?raw'
+import mimoVisionMcpMarkdown from '../content/blog/mimo-vision-mcp.md?raw'
 
 type Frontmatter = Record<string, string>
 
-const markdownSources = [proxy502Markdown]
+const markdownSources = [proxy502Markdown, mimoVisionMcpMarkdown]
 
 function parseFrontmatter(markdown: string): { frontmatter: Frontmatter; content: string } {
   const frontmatterMatch = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
